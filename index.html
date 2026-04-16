@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXETRION Corporation — Energy Redefined</title>
+  <meta name="description" content="EXETRION Corporation. Extraction. Energy. Ion. From Central Asian commodity corridors to global clean energy dominance. Founded 2026, Houston, Texas.">
+  <meta property="og:title" content="EXETRION Corporation">
+  <meta property="og:description" content="The most systematically undervalued commodity corridor on Earth. Complexity is the moat.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts: Syne (display — wide, architectural, powerful) + Satoshi (body — clean) + JetBrains Mono -->
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- GSAP + Plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollToPlugin.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/DrawSVGPlugin.min.js" defer></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
+
+  <link rel="stylesheet" href="./style.css?v=3">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230A0B0F'/><polygon points='16,3 28,10 28,22 16,29 4,22 4,10' stroke='%23E8E6E1' stroke-width='1' fill='none'/><polygon points='16,9 24,22 8,22' stroke='%23C9A84C' stroke-width='0.8' fill='none'/><circle cx='16' cy='18' r='2' fill='%23C9A84C'/></svg>">
+</head>
+<body>
+
+  <!-- ═══════════════ PRELOADER ═══════════════ -->
+  <div id="preloader" class="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <!-- Emblem draws in -->
+      <svg class="preloader__emblem" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="EXETRION">
+        <polygon class="preloader__emblem-path" points="40,4 72,20 72,60 40,76 8,60 8,20" stroke="currentColor" stroke-width="1.5" fill="none"/>
+        <polygon class="preloader__emblem-path" points="40,20 58,52 22,52" stroke="var(--color-accent)" stroke-width="1.2" fill="none"/>
+        <circle class="preloader__emblem-dot" cx="40" cy="44" r="5" fill="var(--color-accent)" opacity="0"/>
+        <ellipse class="preloader__emblem-path" cx="40" cy="44" rx="14" ry="7" stroke="currentColor" stroke-width="0.8" fill="none" transform="rotate(-30 40 44)"/>
+      </svg>
+      <!-- Wordmark fades in after emblem -->
+      <span class="preloader__wordmark">EXETRION</span>
+      <div class="preloader__line">
+        <div class="preloader__line-fill"></div>
+      </div>
+      <span class="preloader__counter">0</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════ NAVIGATION ═══════════════ -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo" aria-label="EXETRION Home">
+        <svg class="nav__emblem" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Outer hexagon -->
+          <polygon points="18,2 32,10 32,26 18,34 4,26 4,10" stroke="currentColor" stroke-width="1.2" fill="none"/>
+          <!-- Inner triangle (extraction/upward energy) -->
+          <polygon points="18,9 27,25 9,25" stroke="var(--color-accent)" stroke-width="1" fill="none"/>
+          <!-- Central ion dot (charged particle) -->
+          <circle cx="18" cy="20" r="2.5" fill="var(--color-accent)"/>
+          <!-- Orbital ring -->
+          <ellipse cx="18" cy="20" rx="7" ry="3.5" stroke="currentColor" stroke-width="0.7" fill="none" transform="rotate(-30 18 20)"/>
+        </svg>
+        <span class="nav__wordmark">EXETRION</span>
+      </a>
+      <div class="nav__links">
+        <a href="#origin" class="nav__link">Origin</a>
+        <a href="#founders" class="nav__link">Founders</a>
+        <a href="#timeline" class="nav__link">Journey</a>
+        <a href="#divisions" class="nav__link">Divisions</a>
+        <a href="#numbers" class="nav__link">Numbers</a>
+      </div>
+      <button class="nav__menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <span class="nav__menu-line"></span>
+        <span class="nav__menu-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu__inner">
+      <a href="#origin" class="mobile-menu__link">Origin</a>
+      <a href="#founders" class="mobile-menu__link">Founders</a>
+      <a href="#timeline" class="mobile-menu__link">Journey</a>
+      <a href="#divisions" class="mobile-menu__link">Divisions</a>
+      <a href="#numbers" class="mobile-menu__link">Numbers</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section class="hero" id="hero">
+      <div class="hero__bg">
+        <div class="hero__gradient"></div>
+        <div class="hero__grid-overlay"></div>
+      </div>
+      <div class="hero__content">
+        <div class="hero__eyebrow">
+          <span class="hero__eyebrow-line"></span>
+          <span class="hero__eyebrow-text">Est. January 14, 2026 — Houston, Texas</span>
+        </div>
+        <h1 class="hero__title" data-split>
+          <span class="hero__title-line">Energy</span>
+          <span class="hero__title-line hero__title-line--accent">Redefined</span>
+        </h1>
+        <p class="hero__subtitle" data-reveal>
+          EXtraction. Energy. TRION. From the most systematically undervalued commodity corridor on Earth to a trillion-dollar vision spanning five continents.
+        </p>
+        <div class="hero__cta" data-reveal>
+          <span class="hero__cta-label">NYSE: EXTR</span>
+          <span class="hero__cta-divider">·</span>
+          <span class="hero__cta-label">IPO 2030</span>
+        </div>
+      </div>
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <div class="hero__scroll-line"></div>
+        <span class="hero__scroll-text">Scroll</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════ ORIGIN STORY ═══════════════ -->
+    <section class="origin" id="origin">
+      <div class="origin__container">
+        <div class="section-label" data-reveal>
+          <span class="section-label__number">01</span>
+          <span class="section-label__text">The Origin</span>
+        </div>
+        <div class="origin__grid">
+          <div class="origin__text-col">
+            <h2 class="origin__heading" data-split>Complexity<br>is the Moat</h2>
+            <div class="origin__body" data-reveal>
+              <p>Central Asia sits on hundreds of billions of barrels of proved and probable reserves, yet its energy markets remain the most fragmented, opaque, and underleveraged corridor on the planet.</p>
+              <p>EXETRION was born from a single thesis: where others see chaos, we see arbitrage. Where institutions see sovereign risk, we see a decade-long head start. Where legacy players see infrastructure gaps, we see vertical integration opportunities worth tens of billions.</p>
+              <p>On Day One, a single trade — 400,000 barrels of Fergana Valley crude at a $4.20 per barrel spread — generated $1.68 million in profit. The thesis was proved before the ink on the incorporation documents had dried.</p>
+            </div>
+          </div>
+          <div class="origin__visual-col">
+            <div class="origin__stat-card" data-reveal>
+              <span class="origin__stat-number">$1.68M</span>
+              <span class="origin__stat-label">Day One Profit</span>
+            </div>
+            <div class="origin__stat-card" data-reveal>
+              <span class="origin__stat-number">400K</span>
+              <span class="origin__stat-label">Barrels First Trade</span>
+            </div>
+            <div class="origin__stat-card" data-reveal>
+              <span class="origin__stat-number">$12M</span>
+              <span class="origin__stat-label">Seed Capital</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ NAME ETYMOLOGY ═══════════════ -->
+    <section class="etymology">
+      <div class="etymology__container">
+        <div class="etymology__grid">
+          <div class="etymology__word" data-reveal>
+            <span class="etymology__prefix">EX</span>
+            <span class="etymology__meaning">Extraction</span>
+          </div>
+          <div class="etymology__word" data-reveal>
+            <span class="etymology__prefix">E</span>
+            <span class="etymology__meaning">Energy</span>
+          </div>
+          <div class="etymology__word" data-reveal>
+            <span class="etymology__prefix">TRION</span>
+            <span class="etymology__meaning">Charged Particle</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ FOUNDERS ═══════════════ -->
+    <section class="founders" id="founders">
+      <div class="founders__container">
+        <div class="section-label" data-reveal>
+          <span class="section-label__number">02</span>
+          <span class="section-label__text">The Founders</span>
+        </div>
+        <div class="founders__grid">
+          <div class="founders__card" data-reveal>
+            <div class="founders__card-header">
+              <div class="founders__avatar">NM</div>
+              <div class="founders__role">
+                <span class="founders__title">Co-Founder & Chief Executive Officer</span>
+              </div>
+            </div>
+            <h3 class="founders__name">Nedal Mohammadi</h3>
+            <p class="founders__bio">American. Ten years on Goldman Sachs' commodity strategy desk, where he mapped every pipeline route, storage terminal, and refining bottleneck between the Caspian Basin and the Mediterranean. He didn't just understand Central Asian energy — he saw the systematic undervaluation that every institutional player was too cautious to exploit.</p>
+            <div class="founders__meta">
+              <span class="founders__meta-item">Goldman Sachs — 10 Years</span>
+              <span class="founders__meta-item">Commodity Strategy</span>
+            </div>
+          </div>
+          <div class="founders__card" data-reveal>
+            <div class="founders__card-header">
+              <div class="founders__avatar">DR</div>
+              <div class="founders__role">
+                <span class="founders__title">Co-Founder & Chief Operating Officer</span>
+              </div>
+            </div>
+            <h3 class="founders__name">Dokha Rustamov</h3>
+            <p class="founders__bio">Born in Tashkent. Columbia Business School. Former senior advisor at Uzbekistan's sovereign wealth fund, where he restructured the fund's energy holdings and built the government relationships that would become EXETRION's first-mover advantage. He speaks the language — literally and figuratively.</p>
+            <div class="founders__meta">
+              <span class="founders__meta-item">Columbia Business School</span>
+              <span class="founders__meta-item">Sovereign Wealth Fund</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ TIMELINE ═══════════════ -->
+    <section class="timeline" id="timeline">
+      <div class="timeline__container">
+        <div class="section-label" data-reveal>
+          <span class="section-label__number">03</span>
+          <span class="section-label__text">The Journey</span>
+        </div>
+        <h2 class="timeline__heading" data-split>2026 — 2040</h2>
+        <div class="timeline__track">
+          <div class="timeline__line">
+            <div class="timeline__line-fill"></div>
+          </div>
+
+          <div class="timeline__item" data-reveal>
+            <div class="timeline__year">2026</div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">The Trading Thesis</h3>
+              <p class="timeline__desc">$4.2B notional volume. $40-60M profit. 18 employees. Offices in Tashkent, Geneva, and Dubai. EXETRION proves that complexity is the moat.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item" data-reveal>
+            <div class="timeline__year">2027</div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">First Acquisition</h3>
+              <p class="timeline__desc">49% stake in a gas storage and compression facility in the Fergana Valley. $80M. The transition from trader to operator begins.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item" data-reveal>
+            <div class="timeline__year">2028</div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">Block F-7</h3>
+              <p class="timeline__desc">30-year Production Sharing Agreement. 800 km². 150-250 million barrels of estimated reserves. London office opens to anchor European capital markets.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item" data-reveal>
+            <div class="timeline__year">2029</div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">First Oil</h3>
+              <p class="timeline__desc">60,000 BOE per day. $3.8B revenue. 420 employees across five offices. The Fergana Valley crude begins to flow.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item" data-reveal>
+            <div class="timeline__year">2030</div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">NYSE IPO — EXTR</h3>
+              <p class="timeline__desc">Raises $3.1 billion. Day One close: $61 per share. Market cap: ~$29 billion. EXETRION enters the global stage.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item" data-reveal>
+            <div class="timeline__year">2031</div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">Iron Corridor</h3>
+              <p class="timeline__desc">640 km pipeline. $2.1 billion. Designed from day one with hydrogen conversion in mind — infrastructure that ages forward, not backward.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item" data-reveal>
+            <div class="timeline__year">2032</div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">Meridian NV</h3>
+              <p class="timeline__desc">$4.8B acquisition. Dutch midstream: LNG terminals in Rotterdam and Zeebrugge, North Sea platforms, EU distribution in 9 countries. Houston trading desk opens.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item" data-reveal>
+            <div class="timeline__year">2033</div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">Permian Basin</h3>
+              <p class="timeline__desc">$6-8B acquisition. 80,000 BOE/day, targeting 200,000 BOE/day. American shale meets Central Asian crude — a two-hemisphere production base.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item" data-reveal>
+            <div class="timeline__year">2034</div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">Gulf of Mexico &amp; EXETRION Fuel</h3>
+              <p class="timeline__desc">Deepwater JV. Retail fuel launch: 100 stations across TX, LA, OK — scaling to 2,000+ by 2040. Gas, diesel, hydrogen, EV charging at every pump.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item" data-reveal>
+            <div class="timeline__year">2035</div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">EXETRION Horizon</h3>
+              <p class="timeline__desc">900MW wind farm. The renewables division launches with a target of 50GW by 2038 — solar, onshore, offshore wind. The energy transition, on EXETRION's terms.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item" data-reveal>
+            <div class="timeline__year">2037</div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">Hydrogen Corridor</h3>
+              <p class="timeline__desc">The Iron Corridor pipeline is repurposed for green hydrogen export. Infrastructure designed in 2031 finds its ultimate purpose six years later.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item" data-reveal>
+            <div class="timeline__year">2038</div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">Fusion Alliance</h3>
+              <p class="timeline__desc">22% stake in a private fusion company. Commercialization rights in 31 countries. The final frontier of energy — and EXETRION has a seat at the table.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item timeline__item--final" data-reveal>
+            <div class="timeline__year">2040</div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">The Trillion-Dollar Vision</h3>
+              <p class="timeline__desc">$1 trillion market cap. 38,000 employees. $90B revenue. 48 countries. 5 continents. From a single trade in Tashkent to the energy company that defined the century.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ OPERATIONS MAP ═══════════════ -->
+    <section class="operations" id="operations">
+      <div class="operations__container">
+        <div class="section-label" data-reveal>
+          <span class="section-label__number">04</span>
+          <span class="section-label__text">Global Presence</span>
+        </div>
+        <h2 class="operations__heading" data-split>Six Cities.<br>Five Continents.</h2>
+        <div class="operations__grid">
+          <div class="operations__office" data-reveal>
+            <span class="operations__city">Tashkent</span>
+            <span class="operations__role">Operations HQ</span>
+          </div>
+          <div class="operations__office" data-reveal>
+            <span class="operations__city">Houston</span>
+            <span class="operations__role">Corporate HQ</span>
+          </div>
+          <div class="operations__office" data-reveal>
+            <span class="operations__city">Geneva</span>
+            <span class="operations__role">Trading</span>
+          </div>
+          <div class="operations__office" data-reveal>
+            <span class="operations__city">Dubai</span>
+            <span class="operations__role">Middle East &amp; Africa</span>
+          </div>
+          <div class="operations__office" data-reveal>
+            <span class="operations__city">London</span>
+            <span class="operations__role">European Capital Markets</span>
+          </div>
+          <div class="operations__office" data-reveal>
+            <span class="operations__city">Singapore</span>
+            <span class="operations__role">Asia-Pacific</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ DIVISIONS ═══════════════ -->
+    <section class="divisions" id="divisions">
+      <div class="divisions__container">
+        <div class="section-label" data-reveal>
+          <span class="section-label__number">05</span>
+          <span class="section-label__text">The Divisions</span>
+        </div>
+        <h2 class="divisions__heading" data-split>Seven Pillars<br>of Energy</h2>
+        <div class="divisions__grid">
+          <div class="divisions__card" data-reveal>
+            <div class="divisions__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 36l6-12 6 8 6-16 6 20"/><rect x="8" y="8" width="32" height="32" rx="2"/></svg>
+            </div>
+            <h3 class="divisions__name">Trading</h3>
+            <p class="divisions__desc">Commodity trading across crude, natural gas, LNG, and refined products. The engine that started everything.</p>
+          </div>
+          <div class="divisions__card" data-reveal>
+            <div class="divisions__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="20" r="8"/><path d="M24 28v12M18 44h12M16 12l-4-4M32 12l4-4"/></svg>
+            </div>
+            <h3 class="divisions__name">Upstream</h3>
+            <p class="divisions__desc">Exploration and production. From the Fergana Valley to the Permian Basin to deepwater Gulf of Mexico.</p>
+          </div>
+          <div class="divisions__card" data-reveal>
+            <div class="divisions__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 24h40M4 24c0-6 8-12 20-12s20 6 20 12M4 24c0 6 8 12 20 12s20-6 20-12"/></svg>
+            </div>
+            <h3 class="divisions__name">Midstream</h3>
+            <p class="divisions__desc">Pipelines, LNG terminals, storage, and distribution. The Iron Corridor. Meridian NV. The arteries of energy.</p>
+          </div>
+          <div class="divisions__card" data-reveal>
+            <div class="divisions__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 40V20l10-12 10 12v20"/><path d="M20 40v-8h8v8"/><path d="M10 40h28"/></svg>
+            </div>
+            <h3 class="divisions__name">EXETRION Fuel</h3>
+            <p class="divisions__desc">Retail fuel stations. Gas, diesel, hydrogen, EV charging. 2,000+ locations by 2040 — the consumer face of EXETRION.</p>
+          </div>
+          <div class="divisions__card" data-reveal>
+            <div class="divisions__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="16"/><path d="M24 8v4M24 36v4M8 24h4M36 24h4M13 13l3 3M32 32l3 3M13 35l3-3M32 16l3-3"/></svg>
+            </div>
+            <h3 class="divisions__name">Horizon</h3>
+            <p class="divisions__desc">Renewables. 50GW target by 2038. Solar, onshore wind, offshore wind. The energy transition, built to scale.</p>
+          </div>
+          <div class="divisions__card" data-reveal>
+            <div class="divisions__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 38l16-28 16 28"/><path d="M16 28h16"/><circle cx="24" cy="22" r="3"/></svg>
+            </div>
+            <h3 class="divisions__name">Hydrogen Corridor</h3>
+            <p class="divisions__desc">Green hydrogen export via repurposed pipeline infrastructure. Infrastructure that ages forward, not backward.</p>
+          </div>
+          <div class="divisions__card divisions__card--highlight" data-reveal>
+            <div class="divisions__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="10"/><circle cx="24" cy="24" r="4"/><path d="M24 4v8M24 36v8M4 24h8M36 24h8"/><circle cx="24" cy="24" r="18" stroke-dasharray="4 4"/></svg>
+            </div>
+            <h3 class="divisions__name">Fusion Alliance</h3>
+            <p class="divisions__desc">22% stake. 31-country commercialization rights. The final frontier of energy — fusion power on the horizon.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ KEY NUMBERS ═══════════════ -->
+    <section class="numbers" id="numbers">
+      <div class="numbers__container">
+        <div class="section-label" data-reveal>
+          <span class="section-label__number">06</span>
+          <span class="section-label__text">By The Numbers</span>
+        </div>
+        <h2 class="numbers__heading" data-split>The 2040<br>Vision</h2>
+        <div class="numbers__grid">
+          <div class="numbers__card" data-reveal>
+            <span class="numbers__value" data-count="1">0</span>
+            <span class="numbers__unit">Trillion</span>
+            <span class="numbers__label">Market Cap Target</span>
+          </div>
+          <div class="numbers__card" data-reveal>
+            <span class="numbers__value" data-count="90">0</span>
+            <span class="numbers__unit">Billion</span>
+            <span class="numbers__label">Revenue Target</span>
+          </div>
+          <div class="numbers__card" data-reveal>
+            <span class="numbers__value" data-count="38000">0</span>
+            <span class="numbers__unit">People</span>
+            <span class="numbers__label">Employees Worldwide</span>
+          </div>
+          <div class="numbers__card" data-reveal>
+            <span class="numbers__value" data-count="48">0</span>
+            <span class="numbers__unit">Countries</span>
+            <span class="numbers__label">Global Operations</span>
+          </div>
+          <div class="numbers__card" data-reveal>
+            <span class="numbers__value" data-count="5">0</span>
+            <span class="numbers__unit">Continents</span>
+            <span class="numbers__label">Worldwide Reach</span>
+          </div>
+          <div class="numbers__card" data-reveal>
+            <span class="numbers__value" data-count="2000">0</span>
+            <span class="numbers__unit">Stations</span>
+            <span class="numbers__label">EXETRION Fuel Retail</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ CLOSING STATEMENT ═══════════════ -->
+    <section class="closing">
+      <div class="closing__container">
+        <blockquote class="closing__quote" data-split>
+          Where others see chaos, we see arbitrage.
+        </blockquote>
+        <p class="closing__attribution" data-reveal>— The EXETRION Thesis</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer" id="footer">
+    <div class="footer__container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo-group">
+            <svg class="footer__emblem" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <polygon points="18,2 32,10 32,26 18,34 4,26 4,10" stroke="currentColor" stroke-width="1.2" fill="none"/>
+              <polygon points="18,9 27,25 9,25" stroke="var(--color-accent)" stroke-width="1" fill="none"/>
+              <circle cx="18" cy="20" r="2.5" fill="var(--color-accent)"/>
+              <ellipse cx="18" cy="20" rx="7" ry="3.5" stroke="currentColor" stroke-width="0.7" fill="none" transform="rotate(-30 18 20)"/>
+            </svg>
+            <span class="footer__wordmark">EXETRION</span>
+          </div>
+          <p class="footer__tagline">Extraction. Energy. Ion.</p>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Corporation</h4>
+          <ul class="footer__list" role="list">
+            <li>Founded January 14, 2026</li>
+            <li>Incorporated in Houston, Texas</li>
+            <li>NYSE Target: EXTR</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Offices</h4>
+          <ul class="footer__list" role="list">
+            <li>Tashkent · Houston · Geneva</li>
+            <li>Dubai · London · Singapore</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Divisions</h4>
+          <ul class="footer__list" role="list">
+            <li>Trading · Upstream · Midstream</li>
+            <li>Fuel · Horizon · Hydrogen · Fusion</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copyright">&copy; 2026 EXETRION Corporation. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js?v=3" defer></script>
+</body>
+</html>
